@@ -75,7 +75,8 @@ export const SCORECARD_DATA: ScorecardCategory[] = [
       { label: '5.1-6 years', value: 2 },
       { label: '4-5 years', value: 1 },
       { label: 'Under 4 years', value: 0 },
-    ]
+    ],
+    tooltip: 'A balloon payment is a large, lump-sum payment due at the end of a loan term. A longer term (or no balloon) is better as it reduces risk and provides more time to refinance or sell.'
   },
   {
     id: 'asIsValue',
@@ -95,7 +96,8 @@ export const SCORECARD_DATA: ScorecardCategory[] = [
       { label: '97.6%-99.1%', value: 2 },
       { label: '100%-105%', value: 1 },
       { label: 'Over 105%', value: 0 },
-    ]
+    ],
+    tooltip: "This measures immediate equity (After Repair Value minus Rehab). Buying at a significant discount (low Loan-to-Value) protects our investment from market shifts."
   },
   {
     // Fix: Changed 'ltrCash Flow' to 'ltrCashFlow' to match ScorecardScores type
@@ -116,7 +118,8 @@ export const SCORECARD_DATA: ScorecardCategory[] = [
       { label: '$51-$100', value: 2 },
       { label: '$1-$50', value: 1 },
       { label: 'Negative Cash Flow', value: 0 },
-    ]
+    ],
+    tooltip: "Long-Term Rental cash flow is the monthly profit after all expenses, including a 20% reserve for vacancies/repairs. Strong cash flow is critical for a healthy investment."
   },
   {
     id: 'rehabNeeded',
@@ -135,7 +138,8 @@ export const SCORECARD_DATA: ScorecardCategory[] = [
       { label: '$9,001-$10,000', value: 2 },
       { label: '$10,001-$12,000', value: 1 },
       { label: 'Over $12,000', value: 0 },
-    ]
+    ],
+    tooltip: "The estimated cost to get the property rent-ready or ready to sell. A lower rehab budget means less capital is tied up, a faster turnaround, and lower risk of unexpected costs."
   },
   {
     id: 'entryFee',
@@ -154,7 +158,8 @@ export const SCORECARD_DATA: ScorecardCategory[] = [
       { label: '15.1-16%', value: 2 },
       { label: '16.1-17%', value: 1 },
       { label: 'Over 17%', value: 0 },
-    ]
+    ],
+    tooltip: "The total cash needed to acquire the property (down payment, closing costs, etc.). A lower entry fee allows us to deploy capital more efficiently across multiple deals."
   },
   {
     id: 'interestRate',
@@ -173,7 +178,8 @@ export const SCORECARD_DATA: ScorecardCategory[] = [
       { label: '5.1-5.75%', value: 2 },
       { label: '5.76-6.5%', value: 1 },
       { label: 'Over 6.5%', value: 0 },
-    ]
+    ],
+    tooltip: "The loan's interest rate directly impacts monthly payments and profitability. A lower rate significantly improves cash flow and makes the deal more resilient to market changes."
   },
 ];
 

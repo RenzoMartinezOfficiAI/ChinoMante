@@ -1,3 +1,6 @@
+// Fix: Import React to resolve 'Cannot find namespace 'React'' error.
+import React from 'react';
+
 export interface BuyBoxData {
   title: string;
   description: string;
@@ -16,6 +19,7 @@ export interface ScorecardCategory {
   subtitle?: string;
   Icon: React.FC<React.SVGProps<SVGSVGElement>>;
   options: ScorecardOption[];
+  tooltip: string;
 }
 
 export interface ScorecardScores {

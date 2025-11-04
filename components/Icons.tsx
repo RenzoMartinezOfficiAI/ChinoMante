@@ -52,3 +52,9 @@ export const InterestRateIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props)
     <path strokeLinecap="round" strokeLinejoin="round" d="M9 14.25l6-6m-5.5.5h.01M19.5 21a1.5 1.5 0 01-1.5-1.5v-5.379a1.5 1.5 0 01.44-1.06L19.5 12m0-3a1.5 1.5 0 01-1.5-1.5V6a1.5 1.5 0 011.5-1.5h.008c.828 0 1.5.672 1.5 1.5v.379a1.5 1.5 0 01-.44 1.06L19.5 9M4.5 21a1.5 1.5 0 001.5-1.5v-5.379a1.5 1.5 0 00-.44-1.06L4.5 12m0-3a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H4.5a1.5 1.5 0 00-1.5 1.5v.379a1.5 1.5 0 00.44 1.06L4.5 9" />
   </svg>
 );
+
+export const InfoIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+  </svg>
+);

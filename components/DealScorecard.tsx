@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { SCORECARD_DATA } from '../constants';
 import { ScorecardScores } from '../types';
+import { InfoIcon } from './Icons';
 
 const DealScorecard: React.FC = () => {
   const initialScores: ScorecardScores = {
@@ -24,7 +25,8 @@ const DealScorecard: React.FC = () => {
       return { averageScore: 0, isComplete: false, resultText: 'Complete all fields to see your score.', scoreColor: 'text-[#7A6F9A]', progress: 0 };
     }
 
-    const total = validScores.reduce((acc, curr) => acc + curr, 0);
+    // Fix: Cast current value to a number to prevent type errors with reduce. Object.values() can return `unknown[]`.
+    const total = validScores.reduce((acc, curr) => acc + Number(curr), 0);
     const average = total / 6;
     const isGoodDeal = average >= 6;
     
@@ -49,13 +51,21 @@ const DealScorecard: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Scorecard Inputs */}
         <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {SCORECARD_DATA.map(({ id, title, subtitle, Icon, options }) => (
+          {SCORECARD_DATA.map(({ id, title, subtitle, Icon, options, tooltip }) => (
             <div key={id} className="bg-[#120926]/50 border border-[#39E2FF]/20 rounded-xl p-6 shadow-lg h-full">
-              <div className="flex items-center mb-4">
-                <Icon className="w-8 h-8 text-[#9B5CFF] mr-3"/>
-                <div>
-                    <h4 className="text-lg font-bold text-white">{title}</h4>
-                    {subtitle && <p className="text-xs text-[#7A6F9A]">{subtitle}</p>}
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center">
+                  <Icon className="w-8 h-8 text-[#9B5CFF] mr-3"/>
+                  <div>
+                      <h4 className="text-lg font-bold text-white">{title}</h4>
+                      {subtitle && <p className="text-xs text-[#7A6F9A]">{subtitle}</p>}
+                  </div>
+                </div>
+                <div className="relative group flex-shrink-0">
+                  <InfoIcon className="w-5 h-5 text-[#7A6F9A] cursor-pointer hover:text-white transition-colors" />
+                  <div className="absolute bottom-full right-0 mb-2 w-64 bg-[#05020B] border border-[#9B5CFF]/50 text-[#B3A8D6] text-sm rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10 p-3">
+                      {tooltip}
+                  </div>
                 </div>
               </div>
               <div className="relative">
