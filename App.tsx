@@ -12,7 +12,7 @@ const App: React.FC = () => {
   return (
     <div className="bg-gradient-to-b from-[#05020B] via-[#120926] to-[#05020B] text-[#F7F5FF] min-h-screen">
       <Header />
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 sm:pt-32 sm:pb-24">
         <Hero />
 
         <section id="buy-box" className="mt-20 sm:mt-32">

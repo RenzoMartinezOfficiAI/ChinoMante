@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from './Button';
 
 const Header: React.FC = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     event.preventDefault();
     const element = document.querySelector(targetId);
@@ -11,7 +21,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-10">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-[#05020B]/80 backdrop-blur-sm border-b border-[#7A6F9A]/30' : 'bg-transparent border-b border-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex justify-between items-center">
           <div className="text-2xl font-orbitron font-bold tracking-wider">
